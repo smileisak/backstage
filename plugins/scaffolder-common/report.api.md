@@ -77,7 +77,7 @@ export interface TemplateEntityV1beta3 extends Entity {
     type: string;
     presentation?: TemplatePresentationV1beta3;
     EXPERIMENTAL_recovery?: TemplateRecoveryV1beta3;
-    EXPERIMENTAL_formHooks?: {
+    EXPERIMENTAL_formDecorators?: {
       id: string;
       input?: JsonObject;
     }[];

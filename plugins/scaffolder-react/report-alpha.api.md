@@ -71,7 +71,7 @@ export function createFormField<
 >(opts: FormFieldExtensionData<TReturnValue, TUiOptions>): FormField;
 
 // @public
-export function createScaffolderFormHook<
+export function createScaffolderFormDecorator<
   TDeps extends {
     [key in string]: AnyApiRef;
   },
@@ -88,7 +88,7 @@ export function createScaffolderFormHook<
   };
   deps?: TDeps;
   fn: (
-    ctx: ScaffolderFormHookContext<TInput>,
+    ctx: ScaffolderFormDecoratorContext<TInput>,
     deps: TDeps extends {
       [key in string]: AnyApiRef;
     }
@@ -97,7 +97,7 @@ export function createScaffolderFormHook<
         }
       : never,
   ) => Promise<void>;
-}): ScaffolderFormHook<TInputSchema, TDeps, TInput>;
+}): ScaffolderFormDecorator<TInputSchema, TDeps, TInput>;
 
 // @alpha
 export const DefaultTemplateOutputs: (props: {
@@ -214,10 +214,10 @@ export interface ScaffolderFieldProps {
   required?: boolean;
 }
 
-// Warning: (ae-missing-release-tag) "ScaffolderFormHook" is part of the package's API, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+// Warning: (ae-missing-release-tag) "ScaffolderFormDecorator" is part of the package's API, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
 // @public (undocumented)
-export type ScaffolderFormHook<
+export type ScaffolderFormDecorator<
   TInputSchema extends {
     [key in string]: (zImpl: typeof z) => z.ZodType;
   } = {},
@@ -237,7 +237,7 @@ export type ScaffolderFormHook<
   };
   deps?: TDeps;
   fn: (
-    ctx: ScaffolderFormHookContext<TInput>,
+    ctx: ScaffolderFormDecoratorContext<TInput>,
     deps: TDeps extends {
       [key in string]: AnyApiRef;
     }
@@ -248,10 +248,10 @@ export type ScaffolderFormHook<
   ) => Promise<void>;
 };
 
-// Warning: (ae-missing-release-tag) "ScaffolderFormHookContext" is part of the package's API, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+// Warning: (ae-missing-release-tag) "ScaffolderFormDecoratorContext" is part of the package's API, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
 // @public (undocumented)
-export type ScaffolderFormHookContext<TInput> = {
+export type ScaffolderFormDecoratorContext<TInput> = {
   input: TInput;
   setSecrets: (input: Record<string, string>) => void;
 };
@@ -483,8 +483,8 @@ export type WorkflowProps = {
 // src/next/components/Workflow/Workflow.d.ts:7:1 - (ae-undocumented) Missing documentation for "WorkflowProps".
 // src/next/components/Workflow/Workflow.d.ts:20:22 - (ae-undocumented) Missing documentation for "Workflow".
 // src/next/components/Workflow/Workflow.d.ts:24:22 - (ae-undocumented) Missing documentation for "EmbeddableWorkflow".
-// src/next/extensions/createScaffolderFormHook.d.ts:3:1 - (ae-undocumented) Missing documentation for "ScaffolderFormHookContext".
-// src/next/extensions/createScaffolderFormHook.d.ts:7:1 - (ae-undocumented) Missing documentation for "ScaffolderFormHook".
+// src/next/extensions/createScaffolderFormDecorator.d.ts:3:1 - (ae-undocumented) Missing documentation for "ScaffolderFormDecoratorContext".
+// src/next/extensions/createScaffolderFormDecorator.d.ts:7:1 - (ae-undocumented) Missing documentation for "ScaffolderFormDecorator".
 // src/next/hooks/useTemplateParameterSchema.d.ts:4:22 - (ae-undocumented) Missing documentation for "useTemplateParameterSchema".
 // src/next/hooks/useTemplateParameterSchema.d.ts:5:5 - (ae-forgotten-export) The symbol "TemplateParameterSchema_2" needs to be exported by the entry point alpha.d.ts
 // src/next/hooks/useTemplateSchema.d.ts:10:5 - (ae-undocumented) Missing documentation for "uiSchema".

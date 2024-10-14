@@ -23,7 +23,6 @@ import { PathParams } from '@backstage/core-plugin-api';
 import { default as React_2 } from 'react';
 import { ReviewStepProps } from '@backstage/plugin-scaffolder-react';
 import { RouteRef } from '@backstage/frontend-plugin-api';
-import { ScaffolderFormHook } from '@backstage/plugin-scaffolder-react/alpha';
 import { SubRouteRef } from '@backstage/frontend-plugin-api';
 import { TemplateEntityV1beta3 } from '@backstage/plugin-scaffolder-common';
 import { TemplateGroupFilter } from '@backstage/plugin-scaffolder-react';
@@ -378,7 +377,6 @@ export type TemplateWizardPageProps = {
     title?: string;
     subtitle?: string;
   };
-  EXPERIMENTAL_formHooks?: ScaffolderFormHook[];
 };
 
 // Warnings were encountered during analysis:
@@ -387,7 +385,7 @@ export type TemplateWizardPageProps = {
 // src/alpha/components/TemplateEditorPage/TemplateEditor.d.ts:4:1 - (ae-undocumented) Missing documentation for "ScaffolderTemplateEditorClassKey".
 // src/alpha/components/TemplateEditorPage/TemplateFormPreviewer.d.ts:4:1 - (ae-undocumented) Missing documentation for "ScaffolderTemplateFormPreviewerClassKey".
 // src/alpha/components/TemplateListPage/TemplateListPage.d.ts:7:1 - (ae-undocumented) Missing documentation for "TemplateListPageProps".
-// src/alpha/components/TemplateWizardPage/TemplateWizardPage.d.ts:7:1 - (ae-undocumented) Missing documentation for "TemplateWizardPageProps".
+// src/alpha/components/TemplateWizardPage/TemplateWizardPage.d.ts:6:1 - (ae-undocumented) Missing documentation for "TemplateWizardPageProps".
 // src/alpha/plugin.d.ts:3:15 - (ae-undocumented) Missing documentation for "_default".
 // src/translation.d.ts:2:22 - (ae-undocumented) Missing documentation for "scaffolderTranslationRef".
 
