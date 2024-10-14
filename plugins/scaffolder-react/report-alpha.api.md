@@ -254,8 +254,12 @@ export type ScaffolderFormDecorator<
 export type ScaffolderFormDecoratorContext<TInput> = {
   input: TInput;
   formState: Record<string, JsonValue>;
-  setFormState: Dispatch<SetStateAction<Record<string, JsonValue>>>;
-  setSecrets: Dispatch<SetStateAction<Record<string, string>>>;
+  setFormState: (
+    fn: (currentState: Record<string, JsonValue>) => Record<string, JsonValue>,
+  ) => void;
+  setSecrets: (
+    fn: (currentState: Record<string, string>) => Record<string, string>,
+  ) => void;
 };
 
 // @alpha (undocumented)
@@ -485,8 +489,8 @@ export type WorkflowProps = {
 // src/next/components/Workflow/Workflow.d.ts:7:1 - (ae-undocumented) Missing documentation for "WorkflowProps".
 // src/next/components/Workflow/Workflow.d.ts:20:22 - (ae-undocumented) Missing documentation for "Workflow".
 // src/next/components/Workflow/Workflow.d.ts:24:22 - (ae-undocumented) Missing documentation for "EmbeddableWorkflow".
-// src/next/extensions/createScaffolderFormDecorator.d.ts:5:1 - (ae-undocumented) Missing documentation for "ScaffolderFormDecoratorContext".
-// src/next/extensions/createScaffolderFormDecorator.d.ts:11:1 - (ae-undocumented) Missing documentation for "ScaffolderFormDecorator".
+// src/next/extensions/createScaffolderFormDecorator.d.ts:4:1 - (ae-undocumented) Missing documentation for "ScaffolderFormDecoratorContext".
+// src/next/extensions/createScaffolderFormDecorator.d.ts:10:1 - (ae-undocumented) Missing documentation for "ScaffolderFormDecorator".
 // src/next/hooks/useTemplateParameterSchema.d.ts:4:22 - (ae-undocumented) Missing documentation for "useTemplateParameterSchema".
 // src/next/hooks/useTemplateParameterSchema.d.ts:5:5 - (ae-forgotten-export) The symbol "TemplateParameterSchema_2" needs to be exported by the entry point alpha.d.ts
 // src/next/hooks/useTemplateSchema.d.ts:10:5 - (ae-undocumented) Missing documentation for "uiSchema".
